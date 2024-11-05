@@ -25,9 +25,8 @@ let uri = '';
 process.env.NODE_ENV === 'test' ? uri = process.env.ATLAS_URI_TEST : uri = process.env.ATLAS_URI;
 
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false }, (err) => {
-    if (err) {
+    if (!err) {
         console.log("Connection to database successful!");
-     console.log(err);
     }
 });
 
